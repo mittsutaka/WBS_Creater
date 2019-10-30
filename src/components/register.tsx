@@ -44,7 +44,7 @@ const InputRow: React.FC = () => {
   );
 };
 
-const Register: React.FC = () => {
+const RegisterView: React.FC = () => {
   return (
     <Paper>
       <div>
@@ -68,4 +68,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default RegisterView;

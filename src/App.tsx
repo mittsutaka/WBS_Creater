@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { AppBar, Toolbar, Typography, List, ListItem, ListItemText, Drawer, Theme } from "@material-ui/core";
 import { ListItemIcon } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";

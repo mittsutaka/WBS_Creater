@@ -1,0 +1,28 @@
+$drawerWidth: 240px;
+
+.top-bar {
+  margin-left: $drawerWidth;
+  width: calc(100% - $drawerWidth);
+}
+
+.drawer {
+  width: $drawerWidth;
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: $drawerWidth;
+  width: calc(100% - $drawerWidth);
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.w-100{
+    width: 100px;
+}
+
+.h-50{
+    height: 50px;
+}

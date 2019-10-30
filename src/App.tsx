@@ -1,28 +1,9 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, List, ListItem, ListItemText, Drawer, Theme } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, List, ListItem, ListItemText, Drawer } from "@material-ui/core";
 import { ListItemIcon } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles, createStyles } from "@material-ui/styles";
 import Icon from "@material-ui/core/Icon";
 import Register from "./components/register";
-
-const drawerWidth = 240;
-const test = makeStyles((theme: Theme) =>
-  createStyles({
-    appBarShift: {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`
-    },
-    drawerStyle: {
-      width: drawerWidth
-    },
-    main: {
-      padding: 20,
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`
-    }
-  })
-);
 
 class navMenu {
   public text: string;
@@ -34,7 +15,6 @@ class navMenu {
 }
 
 const App: React.FC = () => {
-  const cls = test();
   let nav: navMenu[] = [];
   nav.push(new navMenu("一覧", "view_list"));
   nav.push(new navMenu("登録", "add"));
@@ -43,12 +23,12 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <CssBaseline />
-      <AppBar position="static" className={cls.appBarShift}>
+      <AppBar position="static" className="top-bar">
         <Toolbar>
           <Typography variant="h5">WBS CREATER</Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" classes={{ paper: cls.drawerStyle }}>
+      <Drawer variant="permanent" classes={{ paper: "drawer" }}>
         <List>
           {nav.map((nav, index) => (
             <ListItem button>
@@ -60,7 +40,7 @@ const App: React.FC = () => {
           ))}
         </List>
       </Drawer>
-      <main className={cls.main}>
+      <main className="main-content">
         <Register />
       </main>
     </div>

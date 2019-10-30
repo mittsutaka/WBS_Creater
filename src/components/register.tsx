@@ -6,8 +6,6 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import Icon from "@material-ui/core/Icon";
-import { makeStyles, createStyles } from "@material-ui/styles";
-import { Theme } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 
 interface Props {}
@@ -17,26 +15,36 @@ interface State {}
 let tableHeadCells: string[] = ["大項目", "小項目", "内容", "工数", "進捗"];
 
 const InputBox: React.FC = () => {
-  const cls = classes();
-  return <TextField className={cls.inputBox} variant="outlined"></TextField>;
+  return <TextField className="h-50" variant="outlined"></TextField>;
 };
 
-const classes = makeStyles((theme: Theme) =>
-  createStyles({
-    trash: {
-      marginLeft: 10
-    },
-    iconsCell: {
-      width: 100
-    },
-    inputBox: {
-      height: 50
-    }
-  })
-);
+const InputRow: React.FC = () => {
+  return (
+    <TableRow>
+      <TableCell>
+        <InputBox />
+      </TableCell>
+      <TableCell>
+        <InputBox />
+      </TableCell>
+      <TableCell>
+        <InputBox />
+      </TableCell>
+      <TableCell>
+        <InputBox />
+      </TableCell>
+      <TableCell>
+        <InputBox />
+      </TableCell>
+      <TableCell className="w-100">
+        <Icon>edit</Icon>
+        <Icon className="ml-10">restore_from_trash</Icon>
+      </TableCell>
+    </TableRow>
+  );
+};
 
 const Register: React.FC = () => {
-  const cls = classes();
   return (
     <Paper>
       <div>
@@ -50,27 +58,9 @@ const Register: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>
-                <InputBox />
-              </TableCell>
-              <TableCell>
-                <InputBox />
-              </TableCell>
-              <TableCell>
-                <InputBox />
-              </TableCell>
-              <TableCell>
-                <InputBox />
-              </TableCell>
-              <TableCell>
-                <InputBox />
-              </TableCell>
-              <TableCell className={cls.iconsCell}>
-                <Icon>edit</Icon>
-                <Icon className={cls.trash}>restore_from_trash</Icon>
-              </TableCell>
-            </TableRow>
+            <InputRow />
+            <InputRow />
+            <InputRow />
           </TableBody>
         </Table>
       </div>

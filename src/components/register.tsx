@@ -7,6 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 interface Props {}
 
@@ -21,19 +22,19 @@ const InputBox: React.FC = () => {
 const InputRow: React.FC = () => {
   return (
     <TableRow>
-      <TableCell>
+      <TableCell className="min-w-100">
         <InputBox />
       </TableCell>
-      <TableCell>
+      <TableCell className="min-w-100">
         <InputBox />
       </TableCell>
-      <TableCell>
+      <TableCell className="min-w-100">
         <InputBox />
       </TableCell>
-      <TableCell>
+      <TableCell className="min-w-100">
         <InputBox />
       </TableCell>
-      <TableCell>
+      <TableCell className="min-w-100">
         <InputBox />
       </TableCell>
       <TableCell className="w-100">
@@ -46,25 +47,36 @@ const InputRow: React.FC = () => {
 
 const RegisterView: React.FC = () => {
   return (
-    <Paper>
-      <div>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {tableHeadCells.map(cell => {
-                return <TableCell>{cell}</TableCell>;
-              })}
-              <TableCell></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <InputRow />
-            <InputRow />
-            <InputRow />
-          </TableBody>
-        </Table>
+    <div>
+      <div className="register-head">
+        <TextField variant="outlined" label="WBS名称" className="w-50p" />
+        <div className="ml-20">
+          <Button variant="contained" size="medium" color="primary">
+            <Icon className="mr-5">add</Icon>
+            登録
+          </Button>
+        </div>
       </div>
-    </Paper>
+      <Paper>
+        <div>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {tableHeadCells.map((cell, index) => {
+                  return <TableCell key={index}>{cell}</TableCell>;
+                })}
+                <TableCell></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <InputRow />
+              <InputRow />
+              <InputRow />
+            </TableBody>
+          </Table>
+        </div>
+      </Paper>
+    </div>
   );
 };
 

@@ -1,28 +1,62 @@
 $drawerWidth: 240px;
 
-.top-bar {
-  margin-left: $drawerWidth;
-  width: calc(100% - $drawerWidth);
-}
-
 .drawer {
   width: $drawerWidth;
+  margin-top: 64px;
 }
 
 .main-content {
   padding: 20px;
-  margin-left: $drawerWidth;
-  width: calc(100% - $drawerWidth);
+  width: 100%;
+  padding-left: $drawerWidth + 20px;
 }
 
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__card {
+  width: 250px;
+  height: 300px;
+  margin: 0 20px 20px 0;
+}
+
+.register-head{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+// 汎用クラス
 .ml-10 {
   margin-left: 10px;
 }
 
-.w-100{
-    width: 100px;
+.ml-20{
+  margin-left: 20px;
 }
 
-.h-50{
-    height: 50px;
+.mr-5{
+  margin-right: 5px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.w-100 {
+  width: 100px;
+}
+
+.w-50p{
+  width: 50%;
+}
+
+.h-50 {
+  height: 50px;
+}
+
+.min-w-100{
+  min-width: 100px;
 }

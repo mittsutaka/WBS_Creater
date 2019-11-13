@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, List, ListItem, ListItemText, Drawer, Switch } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, List, ListItem, ListItemText, Drawer } from "@material-ui/core";
 import { ListItemIcon } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Icon from "@material-ui/core/Icon";
@@ -28,7 +28,7 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <CssBaseline />
-        <AppBar position="static" className="top-bar">
+        <AppBar position="static">
           <Toolbar>
             <Typography variant="h5">WBS CREATER</Typography>
           </Toolbar>
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Drawer variant="permanent" classes={{ paper: "drawer" }}>
           <List>
             {nav.map((nav, index) => (
-              <Link to={nav.link}>
+              <Link to={nav.link} key={index}>
                 <ListItem button>
                   <ListItemIcon>
                     <Icon>{nav.icon}</Icon>

@@ -9,9 +9,9 @@ export default function ListView() {
 
   return (
     <div className="list">
-      {i.map(() => {
+      {i.map((index) => {
         return (
-          <Card className="list__card">
+          <Card key={index+10} className="list__card">
             <CardContent>
               <Typography>test</Typography>
             </CardContent>

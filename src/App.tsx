@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Icon from "@material-ui/core/Icon";
 import RegisterView from "./components/register";
 import ListView from "./components/list";
+import SettingView from "./components/setting";
 import { BrowserRouter as Router, Link, Route, Switch as SwicthRouter } from "react-router-dom";
 
 class navMenu {
@@ -51,7 +52,7 @@ const App: React.FC = () => {
           <SwicthRouter>
             <Route path="/" exact component={ListView} />
             <Route path="/RegisterView" exact component={RegisterView} />
-            <Route exact component={ListView} />
+            <Route path="/SettingView" exact component={SettingView} />
           </SwicthRouter>
         </main>
       </div>

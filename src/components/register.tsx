@@ -45,7 +45,7 @@ const InputRow: React.FC = () => {
   );
 };
 
-const RegisterView: React.FC = () => {
+const Register: React.FC = () => {
   return (
     <div>
       <div className="register-head">
@@ -80,4 +80,4 @@ const RegisterView: React.FC = () => {
   );
 };
 
-export default RegisterView;
+export default Register;

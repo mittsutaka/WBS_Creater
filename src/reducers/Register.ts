@@ -1,5 +1,5 @@
 import { IRegisterAction, ActionTypes } from "../actions/Register";
-import { IRegisterState } from "../models/register";
+import { IRegisterState } from "../models/Register";
 
 const initialState: IRegisterState = {
   id: 0,

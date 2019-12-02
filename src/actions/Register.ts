@@ -1,5 +1,6 @@
 export enum ActionTypes {
-  Register = "REGISTER_WBS"
+  Register = "REGISTER_WBS",
+  Test = "TEST"
 }
 
 export interface IRegisterAction {
@@ -12,4 +13,10 @@ const registerWbs = (id: number, name: string) => ({
   payload: { id, name }
 });
 
-export const RegisterActions = registerWbs;
+const test = (text: string) => ({
+  type: ActionTypes.Test
+});
+
+export const RegisterActions = {
+  registerWbs
+};

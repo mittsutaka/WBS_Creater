@@ -8,6 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { IRegisterActions,RegisterProps} from "../models/Register";
 
 interface Props {}
 
@@ -45,13 +46,13 @@ const InputRow: React.FC = () => {
   );
 };
 
-const Register: React.FC = () => {
+const Register: React.FC<RegisterProps> = (props:RegisterProps) => {
   return (
     <div>
       <div className="register-head">
         <TextField variant="outlined" label="WBS名称" className="w-50p" />
         <div className="ml-20">
-          <Button variant="contained" size="medium" color="primary">
+          <Button variant="contained" size="medium" color="primary" onClick={(e) =>props.test("ボタンおしたよ")}>
             <Icon className="mr-5">add</Icon>
             登録
           </Button>

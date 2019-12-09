@@ -5,13 +5,20 @@ import { IRegisterState } from "../models/register";
 import { Dispatch } from "react";
 import { registerWbs } from "../actions/Register";
 
-const mapStateToProps = (state: IRegisterState) => ({
-  id: state.id,
-  name: state.name
-});
+const mapStateToProps = (state: IRegisterState) => {
+  return {
+    id: state.id,
+    name: state.name
+  };
+};
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
-  return dispatch(registerWbs);
+  return {
+    onClickButton() {
+      console.log("クリック");
+      dispatch(registerWbs(1, "testtest"));
+    }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

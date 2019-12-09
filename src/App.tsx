@@ -1,6 +1,6 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Register from "./components/register";
+import Register from "./containers/Register";
 import ListView from "./components/list";
 import SettingView from "./components/setting";
 import { BrowserRouter as Router, Route, Switch as SwicthRouter } from "react-router-dom";

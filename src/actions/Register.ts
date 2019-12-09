@@ -4,6 +4,10 @@ export enum ActionTypes {
 
 export interface IRegisterAction {
   type: ActionTypes.Register;
+  payload:{
+    id:number,
+    name:string,
+  }
 }
 
 //WBSを登録するAction

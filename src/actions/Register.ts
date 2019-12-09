@@ -7,9 +7,7 @@ export interface IRegisterAction {
 }
 
 //WBSを登録するAction
-const registerWbs = (id: number, name: string) => ({
+export const registerWbs = (id: number, name: string) => ({
   type: ActionTypes.Register,
   payload: { id, name }
 });
-
-export const RegisterActions = registerWbs;

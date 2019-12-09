@@ -1,18 +1,18 @@
-import React from "react";
+import React, { ReactChildren } from "react";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
+import { IRegisterState } from "../models/register";
 
-const ListView: React.FC = () => {
-  const NUM: number = 10;
-  let i: number[] = [1, 2, 3, 4, 5, 6];
+const ListView = (props:IRegisterState[]) => {
+  const wbsList = props;
   return (
     <div className="list">
-      {i.map(index => {
+      {wbsList.map(wbs => {
         return (
-          <Card key={index + NUM} className="list__card">
+          <Card className="list__card">
             <CardContent>
-              <Typography>test</Typography>
+              <Typography>{wbs}</Typography>
             </CardContent>
           </Card>
         );

@@ -1,11 +1,9 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Register from "./containers/Register";
-import ListView from "./components/list";
+import Register from "./components/register";
+import List from "./components/List";
 import SettingView from "./components/setting";
 import { BrowserRouter as Router, Route, Switch as SwicthRouter } from "react-router-dom";
-import Auth from "./containers/Auth";
-import LoginView from "./components/login";
 import LeftMenu from "./components/share/leftmenu";
 import TopBar from "./components/share/topbar";
 import firebase from "firebase";
@@ -44,13 +42,13 @@ database.ref("/users").set({
 });
 
 const App: React.FC = () => {
-  
-  let flag:boolean = false;
+  let flag: boolean = false;
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       console.log(user);
       flag = true;
     } else {
+      flag = false;
       console.log("dameda");
     }
   });
@@ -59,20 +57,15 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <CssBaseline />
-        <SwicthRouter>
-          <Route exact path="/Login" component={LoginView} />
-          <Auth>
-            <TopBar />
-            <LeftMenu />
-            <main className="main-content">
-              <SwicthRouter>
-                <Route path="/List" exact component={ListView} />
-                <Route path="/Register" exact component={Register} />
-                <Route path="/Setting" exact component={SettingView} />
-              </SwicthRouter>
-            </main>
-          </Auth>
-        </SwicthRouter>
+          <TopBar />
+          <LeftMenu />
+          <main className="main-content">
+            <SwicthRouter>
+              <Route path="/List" exact component={List} />
+              <Route path="/Register" exact component={Register} />
+              <Route path="/Setting" exact component={SettingView} />
+            </SwicthRouter>
+          </main>
       </div>
     </Router>
   );

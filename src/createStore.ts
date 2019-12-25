@@ -1,5 +1,5 @@
 import { createStore as reduxCreateStore, combineReducers } from "redux";
-import * as reducers from "./reducers";
+import * as reducers from "./reducers/Index";
 
 export type AppState = {};
 

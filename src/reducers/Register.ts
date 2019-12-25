@@ -10,10 +10,11 @@ const initialState: IRegisterState = {
 export default (state = initialState, action: IRegisterAction): IRegisterState => {
   switch (action.type) {
     case ActionTypes.Register: {
-      let newWbs:IWbs ={id:action.payload.id,name:action.payload.name}; 
+      //let newWbs:IWbs ={id:action.payload.id,name:action.payload.name}; 
       console.log("あくしょん");
       console.log(state);
       console.log(action);
+      console.log(action.payload);
       return { ...state,id: action.payload.id, name: action.payload.name };
     }
     default: {

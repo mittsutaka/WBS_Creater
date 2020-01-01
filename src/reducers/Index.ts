@@ -1,1 +1,1 @@
-export {default as Register} from "./Register";
+export {default as Wbs} from "./Wbs";

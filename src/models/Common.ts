@@ -1,4 +1,5 @@
-export interface IWbs{
-    id:number;
-    name:string;
+import {IWbs} from "./db";
+
+export interface IWbsState{
+    wbsList:IWbs[],
 }

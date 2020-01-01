@@ -1,16 +1,20 @@
 import { IRegisterAction, ActionTypes } from "../actions/Register";
-import { IRegisterState} from "../models/Register";
+import {IWbsState} from "../models/Common";
 
-const initialState: IRegisterState = {
+const initialState: IWbsState = {
   wbsList:[
     {
       id:0,
-      name:""
+      name:"",
+      large_class:"",
+      small_class:"",
+      status:1,
+      progress:"wait"
     }
   ]
 };
 
-export default (state:IRegisterState = initialState, action: IRegisterAction): IRegisterState => {
+export default (state:IWbsState = initialState, action: IRegisterAction): IWbsState => {
   switch (action.type) {
     case ActionTypes.Register: {
       console.log(state);

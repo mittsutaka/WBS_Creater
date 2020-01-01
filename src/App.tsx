@@ -26,19 +26,29 @@ firebase
   });
 
 // Get a reference to the database service
-var database = firebase.database();
+//Realtime Database
+// var database = firebase.database();
 
-database
-  .ref("/users")
-  .once("value")
-  .then(user => {
-    console.log(user.child("name").val());
-    console.log(user.child("email").val());
-  });
+// database
+//   .ref("/users")
+//   .once("value")
+//   .then(user => {
+//     console.log(user.child("name").val());
+//     console.log(user.child("email").val());
+//   });
 
-database.ref("/users").set({
-  name: "ミツタカか",
-  email: "mitsutaka@gmail.com"
+// database.ref("/users").set({
+//   name: "ミツタカか",
+//   email: "mitsutaka@gmail.com"
+// });
+
+//Firestore
+let db = firebase.firestore();
+
+db.collection("Users").add({
+  first:"mitsutaka",
+  last:"murao",
+  born:1989
 });
 
 const App: React.FC = () => {

@@ -1,16 +1,7 @@
-import {IWbs} from "./Common";
-
-export interface IListProps{
-    Lists:IList[]
-}
-
-export interface IList{
-    name:string,
-    wbses:string[]
-}
+import {IWbs} from "./db";
 
 export interface IListState{
-    Register:{
+    Wbs:{
         wbsList:IWbs[]
     }
 }

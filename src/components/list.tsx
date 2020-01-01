@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { IListState } from "../models/List";
 
 const List = () => {
-  let list = useSelector((state: IListState) => state.Register.wbsList);
+  let list = useSelector((state: IListState) => state.Wbs.wbsList);
 
   return <div className="list">
     {

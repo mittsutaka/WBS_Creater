@@ -1,11 +1,11 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Register from "./components/register";
+import Register from "./components/Register";
 import List from "./components/List";
-import SettingView from "./components/setting";
+import SettingView from "./components/Setting";
 import { BrowserRouter as Router, Route, Switch as SwicthRouter } from "react-router-dom";
-import LeftMenu from "./components/share/leftmenu";
-import TopBar from "./components/share/topbar";
+import LeftMenu from "./components/share/Leftmenu";
+import TopBar from "./components/share/Topbar";
 import firebase from "firebase";
 import firebaseConfig from "./firebase-config";
 
@@ -42,13 +42,10 @@ database.ref("/users").set({
 });
 
 const App: React.FC = () => {
-  let flag: boolean = false;
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       console.log(user);
-      flag = true;
     } else {
-      flag = false;
       console.log("dameda");
     }
   });

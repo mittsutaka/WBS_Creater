@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
@@ -8,9 +8,8 @@ import TableRow from "@material-ui/core/TableRow";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { IRegisterProps } from "../models/register";
 import { registerWbs } from "../actions/Register";
-import { useDispatch,useSelector} from "react-redux";
+import { useDispatch} from "react-redux";
 
 interface Props {}
 
@@ -51,7 +50,7 @@ const InputRow: React.FC = () => {
 const Register = () => {
   const dispatch = useDispatch();
   const [name,setName] = useState<string>("");
-  const register = () => dispatch(registerWbs(1, name));
+  const register = () => dispatch(registerWbs(name));
 
   return (
     <div>

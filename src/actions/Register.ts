@@ -1,3 +1,5 @@
+import { IWbs } from "../models/Common";
+
 export enum ActionTypes {
   Register = "REGISTER_WBS",
   Test = "TEST"
@@ -5,16 +7,13 @@ export enum ActionTypes {
 
 export interface IRegisterAction {
   type: ActionTypes.Register;
-  payload: {
-    id: number;
-    name: string;
-  };
+  payload:IWbs;
 }
 
 //WBSを登録するAction
-export const registerWbs = (id: number, name: string) => ({
+export const registerWbs = (name: string) => ({
   type: ActionTypes.Register,
-  payload: { id,name }
+  payload: { name }
 });
 
 export const RegisterActions = {

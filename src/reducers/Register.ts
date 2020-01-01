@@ -1,23 +1,24 @@
 import { IRegisterAction, ActionTypes } from "../actions/Register";
-import { IRegisterState, IWbs } from "../models/register";
+import { IRegisterState} from "../models/Register";
 
 const initialState: IRegisterState = {
-  wbsList:[{id:10,name:"初期値"}],
-  id: 0,
-  name: "新規登録"
+  wbsList:[
+    {
+      id:0,
+      name:""
+    }
+  ]
 };
 
-export default (state = initialState, action: IRegisterAction): IRegisterState => {
+export default (state:IRegisterState = initialState, action: IRegisterAction): IRegisterState => {
   switch (action.type) {
     case ActionTypes.Register: {
-      //let newWbs:IWbs ={id:action.payload.id,name:action.payload.name}; 
-      console.log("あくしょん");
       console.log(state);
       console.log(action);
-      console.log(action.payload);
-      return { ...state,id: action.payload.id, name: action.payload.name };
+      return { ...state,wbsList:[...state.wbsList,action.payload] };
     }
     default: {
+      console.log("実行");
       return state;
     }
   }

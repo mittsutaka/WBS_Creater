@@ -4,9 +4,17 @@ import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import { useSelector } from "react-redux";
 import { IListState } from "../models/List";
+import { firebaseDb } from "../firebase";
 
 const List = () => {
   let list = useSelector((state: IListState) => state.Wbs.wbsList);
+  let projectRef =firebaseDb.collection("Projects");
+  let dblist = projectRef.where("creator", "==", "mitsutaka").get().then(snapshot=>{
+    snapshot.forEach(function(doc){
+      console.log(doc);
+      console.log(doc.data());
+    })
+  })
 
   return <div className="list">
     {

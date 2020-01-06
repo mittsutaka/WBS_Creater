@@ -1,4 +1,5 @@
-import { createStore as reduxCreateStore, combineReducers, compose } from "redux";
+import { createStore as reduxCreateStore, combineReducers, compose,applyMiddleware } from "redux";
+import thunkMiddleware from "redux-thunk";
 import * as reducers from "./reducers/Index";
 
 export type AppState = {};
@@ -14,8 +15,11 @@ const createStore = () => {
   const store = reduxCreateStore(
     combineReducers<AppState>({
       ...reducers,
+
     }),
-    composeReduxDevToolsEnhancers()
+    composeReduxDevToolsEnhancers(
+      applyMiddleware(thunkMiddleware)
+    ),
   );
   return store;
 };

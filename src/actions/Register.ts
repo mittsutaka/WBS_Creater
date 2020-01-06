@@ -1,4 +1,4 @@
-import { IWbs } from "../models/db";
+import { IWbs } from "../models/Db";
 
 export enum ActionTypes {
   Register = "REGISTER_WBS",

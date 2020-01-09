@@ -22,7 +22,6 @@ const List = () => {
   const dispatch = useDispatch();
   const fecth = () => dispatch(FecthList());
   fecth();
-  console.log(typeof list)
   return (
     <div className="list">
       {list.map(wbs => {

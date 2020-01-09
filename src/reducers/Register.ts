@@ -1,28 +1,30 @@
 import { IRegisterAction, ActionTypes } from "../actions/Register";
-import {IWbsState} from "../models/Common";
+import { IRegisterState } from "../models/Register";
 
-const initialState: IWbsState = {
-  wbsList:[
+const initialState: IRegisterState = {
+  project_name: "",
+  works: [
     {
-      id:0,
-      name:"",
-      large_class:"",
-      small_class:"",
-      status:1,
-      progress:"wait"
+      id: 5,
+      name: "test",
+      large_class:"large",
+      small_class:"small",
+      progress:"progress",
+      status:1
     }
   ]
 };
 
-export default (state:IWbsState = initialState, action: IRegisterAction): IWbsState => {
+export default (state: IRegisterState = initialState, action: IRegisterAction): IRegisterState => {
   switch (action.type) {
     case ActionTypes.Register: {
       console.log(state);
       console.log(action);
-      return { ...state,wbsList:[...state.wbsList,action.payload] };
+      return { ...state };
     }
     default: {
       console.log("実行");
+      console.log(state);
       return state;
     }
   }

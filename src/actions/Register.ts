@@ -1,4 +1,4 @@
-import { IWbs } from "../models/Db";
+import { IWorks } from "../models/Db";
 
 export enum ActionTypes {
   Register = "REGISTER_WBS",
@@ -7,7 +7,7 @@ export enum ActionTypes {
 
 export interface IRegisterAction {
   type: ActionTypes.Register;
-  payload:IWbs;
+  payload:IWorks;
 }
 
 //WBSを登録するAction

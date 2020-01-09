@@ -1,16 +1,14 @@
-import {IWbs} from "./Db";
+import { IProject } from "./Db";
 
 export enum ListActionType {
-    Fecth = "FETCH_LIST"
-  }
-
-export interface IListState{
-    Register:{
-        wbsList:IWbs[]
-    }
+  Fecth = "FETCH_LIST"
 }
 
-export interface IListAction{
-    type:ListActionType,
-    payload:any
+export interface IListState {
+   projects: IProject[] ;
+}
+
+export interface IListAction {
+  type: ListActionType;
+  payload: any;
 }

@@ -3,7 +3,7 @@ export interface IUsers{
 }
 
 export interface IUser{
-    id:string;
+    id:number;
     name:string;
     mail:string;
     pass:string;
@@ -14,15 +14,15 @@ export interface IProjects{
 }
 
 export interface IProject{
-    id:string;
+    id:number;
     name:string;
 }
 
-export interface IWbsList{
-    wbs_list:IWbs[];
+export interface IWorks{
+    works:IWork[];
 }
 
-export interface IWbs{
+export interface IWork{
     id:number;
     name:string;
     large_class:string;

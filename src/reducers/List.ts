@@ -13,7 +13,8 @@ export default (state: IListState = initialState, action: IListAction) => {
   console.log("reducer");
   switch (action.type) {
     case ListActionType.Fecth:
-      return { ...state };
+      console.log(action);
+      return { ...state, projects:action.payload.projects};
     default:
       return state;
   }

@@ -14,8 +14,10 @@ export interface IProjects{
 }
 
 export interface IProject{
-    id:number;
     name:string;
+    creator:string;
+    created_at:Date;
+    updated_at:Date;
 }
 
 export interface IWorks{

@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
-import { useSelector, useDispatch } from "react-redux";
-import { FecthList } from "../actions/List";
+import { useSelector } from "react-redux";
 import { IAppState } from "../models/State";
+import { useDispatch } from "react-redux";
+import { FecthList } from "../apis/firestore";
 
 const List = () => {
   let list = useSelector((state: IAppState) => state.List.projects);
   const dispatch = useDispatch();
-  const fecth = () => dispatch(FecthList());
-  fecth();
+  useEffect(() => FecthList(dispatch), [dispatch]);
+
   return (
     <div className="list">
-      {list.map(wbs => {
+      {list.map((project, index) => {
         return (
-          <Card key={wbs.id} className="list__card">
+          <Card key={`project-${index}`} className="list__card">
             <CardContent>
-              <Typography>{wbs.name}</Typography>
+              <Typography>{project.name}</Typography>
             </CardContent>
           </Card>
         );

@@ -18,13 +18,9 @@ const initialState: IRegisterState = {
 export default (state: IRegisterState = initialState, action: IRegisterAction): IRegisterState => {
   switch (action.type) {
     case ActionTypes.Register: {
-      console.log(state);
-      console.log(action);
       return { ...state };
     }
     default: {
-      console.log("実行");
-      console.log(state);
       return state;
     }
   }

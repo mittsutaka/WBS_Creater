@@ -31,4 +31,5 @@ export interface IWork{
     small_class:string;
     status:number;
     progress:string;
+    project_id:string;
 }

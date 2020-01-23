@@ -4,7 +4,7 @@ import "ress";
 import App from "./App";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import "./style.scss";
+import "./css/Common.scss";
 import { Provider } from "react-redux";
 import createStore from "./createStore";
 

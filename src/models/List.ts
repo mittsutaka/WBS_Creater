@@ -1,7 +1,8 @@
 import { IProject } from "./Db";
 
 export enum ListActionType {
-  Fecth = "FETCH_LIST"
+  Fecth = "FETCH_LIST",
+  RegisterProject = "REGISTER_PROJECT",
 }
 
 export interface IListState {
@@ -10,5 +11,8 @@ export interface IListState {
 
 export interface IListAction {
   type: ListActionType;
-  payload: any;
+  payload: {
+    projects:IProject[],
+    project:IProject
+  };
 }

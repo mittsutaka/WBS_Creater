@@ -10,7 +10,8 @@ const initialState: IRegisterState = {
       large_class:"large",
       small_class:"small",
       progress:"progress",
-      status:1
+      status:1,
+      project_id:""
     }
   ]
 };

@@ -8,8 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { registerWbs } from "../actions/Register";
-import { useDispatch} from "react-redux";
+import "../css/Register.scss";
 
 interface Props {}
 
@@ -48,18 +47,13 @@ const InputRow: React.FC = () => {
 };
 
 const Register = () => {
-  const dispatch = useDispatch();
-  const [name,setName] = useState<string>("");
-  const register = () => dispatch(registerWbs(name));
-
   return (
     <div>
       <div className="register-head">
-        <TextField value={name} variant="outlined" label="WBS名称" className="w-50p" onChange={(e)=>setName(e.target.value)}/>
-        <div className="ml-20">
-          <Button variant="contained" size="medium" color="primary" onClick={register}>
-            <Icon className="mr-5">add</Icon>
-            登録
+        <TextField value="プロジェクト名" variant="outlined" label="プロジェクト名" className="w-50p" />
+        <div className="save-btn">
+          <Button variant="contained" size="medium" color="primary">
+            保存
           </Button>
         </div>
       </div>

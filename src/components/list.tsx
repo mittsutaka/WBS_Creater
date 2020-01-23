@@ -22,7 +22,10 @@ const List = () => {
     created_at:new Date(Date.now()),
     updated_at:new Date(Date.now())
   };
-  const register = () => dispatch(RegisterProject(newProject));
+  const register = () => {
+    dispatch(RegisterProject(newProject));
+    setName("");
+  };
 
   useEffect(() => FecthList(dispatch), [dispatch]);
 

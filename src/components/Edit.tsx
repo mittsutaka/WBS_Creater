@@ -48,7 +48,7 @@ const InputRow: React.FC = () => {
   );
 };
 
-const Register = () => {
+const Edit = () => {
   return (
     <div>
       <div className="register-head">
@@ -82,4 +82,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Edit;

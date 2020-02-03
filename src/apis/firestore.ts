@@ -16,3 +16,8 @@ export const FecthList = (dispatch: Dispatch<any>) => {
       dispatch(FecthAction(projects));
     });
 };
+
+export const RegisterProject =(project:IProject)=>{
+  let projectRef = firebaseDb.collection("Projects");
+  projectRef.doc().set(project);
+}

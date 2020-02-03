@@ -14,6 +14,7 @@ export interface IProjects{
 }
 
 export interface IProject{
+    id:number;
     name:string;
     creator:string;
     created_at:Date;

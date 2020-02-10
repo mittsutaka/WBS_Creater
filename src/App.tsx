@@ -2,6 +2,7 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Register from "./components/Register";
 import List from "./components/List";
+import Edit from "./components/Edit";
 import SettingView from "./components/Setting";
 import { BrowserRouter as Router, Route, Switch as SwicthRouter } from "react-router-dom";
 import LeftMenu from "./components/share/Leftmenu";
@@ -24,6 +25,7 @@ const App: React.FC = () => {
             <Route path="/List" exact component={List} />
             <Route path="/Register" exact component={Register} />
             <Route path="/Setting" exact component={SettingView} />
+            <Route path="/Edit/:id" exact component={Edit} />
           </SwicthRouter>
         </main>
       </div>

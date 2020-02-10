@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import {Link,Route} from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IAppState } from "../models/State";
 import { useDispatch } from "react-redux";
@@ -48,25 +48,26 @@ const List = () => {
         </div>
       </div>
       <div className="list">
-        {list.map((project, index) => {
-          return (
-            <Link key={`project-${index}`} to={`/Edit/${project.id}`}>
-              <Card className="list__card">
-                <CardActionArea
-                  className="list__card-action-area"
-                  onClick={() => {
-                    toEditPage(project.name);
-                  }}
-                >
-                  <CardContent>
-                    <Typography>{project.name}</Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Link>
-          );
-        })}
-        <Route path="Edit/:id" component={Edit}/>
+        <Route>
+          {list.map((project, index) => {
+            return (
+              <Link key={`project-${index}`} to={`/Edit/${project.id}`}>
+                <Card className="list__card">
+                  <CardActionArea
+                    className="list__card-action-area"
+                    onClick={() => {
+                      toEditPage(project.name);
+                    }}
+                  >
+                    <CardContent>
+                      <Typography>{project.name}</Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
+            );
+          })}
+        </Route>
       </div>
     </div>
   );

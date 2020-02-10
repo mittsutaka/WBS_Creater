@@ -10,7 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import "../css/Register.scss";
 
-console.log("register");
+console.log("edit");
 
 interface Props {}
 

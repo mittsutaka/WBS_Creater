@@ -21,9 +21,9 @@ class navMenu {
 
 const LeftMenu: React.FC = () => {
   let nav: navMenu[] = [];
-  nav.push(new navMenu("一覧", "view_list", "/List"));
-  nav.push(new navMenu("登録・編集", "add", "/Register"));
-  nav.push(new navMenu("設定", "settings_application", "/Setting"));
+  nav.push(new navMenu("Project List", "view_list", "/List"));
+  //nav.push(new navMenu("登録・編集", "add", "/Register"));
+  nav.push(new navMenu("Setting", "settings_application", "/Setting"));
   return (
     <Drawer variant="permanent" classes={{ paper: "drawer" }}>
       <List>

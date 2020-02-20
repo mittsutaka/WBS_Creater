@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
@@ -9,8 +9,8 @@ import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import "../css/Register.scss";
-
-console.log("edit");
+import { FecthProject } from "../apis/firestore";
+import { IProject } from "../models/Db";
 
 interface Props {}
 
@@ -48,11 +48,17 @@ const InputRow: React.FC = () => {
   );
 };
 
-const Edit = () => {
+const Edit = (props: any) => {
+  let id = props.match.params.id;
+  const [name, setName] = useState<string>("プロジェクト名");
+  FecthProject(id).then((project: IProject) => {
+    //projectをstoreに保存する処理を書く
+    setName(project.name);
+  });
   return (
     <div>
       <div className="register-head">
-        <TextField value="プロジェクト名" variant="outlined" label="プロジェクト名" className="w-50p" />
+        <TextField value={name} variant="outlined" label="プロジェクト名" className="w-50p" />
         <div className="save-btn">
           <Button variant="contained" size="medium" color="primary">
             保存
